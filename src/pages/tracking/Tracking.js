@@ -26,7 +26,7 @@ const Tracking = ({language}) => {
         <span className="sr-only">Loading...</span>
     </div>
 </div>}
-       {(trackingData.length!=0&&!loading)&& <div >
+       {(trackingData.length!=0&&!loading)? <div >
         
             <div className=' mt-10 px-5 border border-gray-200 border-solid rounded-xl'>
             <div className='divide-y flex items-center justify-between'>
@@ -207,7 +207,13 @@ const Tracking = ({language}) => {
 
 
             </div>
-        </div>}
+        </div>:
+        <div className='flex items-center flex-col mt-6'>
+
+        <img className='w-96 mb-11' src={require('../../assets/image/search-icon-transparent-images-vector-16.png')}/>
+        <p className='text-lg text-gray-600'>search to show shipment data</p>
+        </div>
+        }
         </Container>
     </div>
   )
